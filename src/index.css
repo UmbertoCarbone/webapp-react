@@ -1,1 +1,54 @@
-@import "bootstrap"
+@import "bootstrap";
+
+html,
+body {
+    background: linear-gradient(to top, #111111, #000000) !important;
+}
+
+.btn-grad {
+    background-image: linear-gradient(to right, #83a4d4 0%, #b6fbff  51%, #83a4d4  100%);
+    margin: 5px;
+    padding: 8px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #fff;
+    box-shadow: 0 0 7px #eee;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+    
+    text-decoration: none;
+}
+
+.card {
+    background-color: transparent !important;
+    border: none !important;
+    
+    box-shadow: none !important;
+
+    border-radius: 0 !important;
+}
+
+.card img {
+    border: none !important;
+    
+    border-radius: 0 !important;
+    
+    box-shadow: none !important;
+    
+}
+
+.card-img-top {
+    border-radius: 0 !important;
+    
+}
+
+
+

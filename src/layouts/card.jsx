@@ -2,23 +2,29 @@ import { Link } from 'react-router-dom';
 
 export default function Card({ movie }) {
     return (
-        <div className="card h-100 shadow">
-            <img
-                src={movie.image}
-                className="card-img-top"
-                alt={movie.title}
-                style={{ height: '300px', objectFit: 'cover' }}
-            />
-            <div className="card-body d-flex flex-column">
-                <h5 className="card-title">{movie.title}</h5>
-                <p className="card-text">Genere: {movie.genre}</p>
-                <div className="mt-auto">
-                    <Link
-                        to={`/Movies/${movie.id}`}
-                        className="btn btn-primary"
-                    >
-                        Vedi Dettagli
-                    </Link>
+        <div className="card mb-3 text-white" style={{ maxWidth: "540px" }}>
+            <div className="row g-0">
+                <div className="col-4">
+                    <img 
+                        src={movie.image} 
+                        className="img-fluid h-100" 
+                        alt={movie.title}
+                        style={{ objectFit: 'cover' }}
+                    />
+                </div>
+                <div className="col-8">
+                    <div className="card-body">
+                        <h5 className="card-title">{movie.title}</h5>
+                        <p className="card-text">{movie.genre}</p>
+                        <p className="card-text">{movie.abstract}</p>
+                        
+                        <Link 
+                            to={`/Movies/${movie.id}`} 
+                            className="btn-grad"
+                        >
+                            Vedi Dettagli
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>

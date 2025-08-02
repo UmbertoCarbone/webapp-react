@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Navbar from "../src/layouts/Navbar";
 import Card from "../src/layouts/card";
 
+
 export default function HomePage() {
     const [movies, setMovies] = useState([]);
 
@@ -14,15 +15,11 @@ export default function HomePage() {
     return (
         <>
             <Navbar />
-            <div className="container my-4">
-                <h1>🎬 Lista Film</h1>
-                <div className="row">
-                    {movies.map(movie => (
-                        <div key={movie.id}>
-                            <Card movie={movie} />
-                        </div>
-                    ))}
-                </div>
+            <h1 className='text-center text-white'>🎬 Lista Film</h1>
+            <div className="col-12 col-md-8 col-lg-6 mx-auto">
+                {movies.map(movie => (
+                    <Card key={movie.id} movie={movie} />
+                ))}
             </div>
         </>
     )
