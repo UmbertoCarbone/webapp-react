@@ -15,15 +15,15 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li className="mb-2">
-                                <Link to="/about" className="text-white-50 text-decoration-none">
+                              {/*   <Link to="/about" className="text-white-50 text-decoration-none">
                                     ℹ️ About Us
-                                </Link>
+                                </Link> */}
                             </li>
-                            <li className="mb-2">
+                            {/* <li className="mb-2">
                                 <Link to="/contact" className="text-white-50 text-decoration-none">
                                     📧 Contatti
                                 </Link>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
 
