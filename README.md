@@ -1,33 +1,44 @@
-# 🎬 WebApp - Frontend React
+# 🎬 WebApp React - Film Database
 
-## 🛠️ Setup Completato
+## 📋 MILESTONE 0 - Setup Progetto
 
-### Creazione del Progetto
+### 1. Creazione Progetto
 ```bash
-npm create vite@latest webapp-react 
+npm create vite@latest webapp-react
+cd webapp-react
 ```
 
-### Dipendenze Installate
+### 2. Installazione Dipendenze
 ```bash
-npm install react-router-dom 
+npm install
+npm install react-router-dom
 npm install bootstrap
 ```
 
+### 3. Avvio Progetto
+```bash
+npm run dev
+```
+
+### 4. Struttura Cartelle Create
 
 
-### 🛣️ Rotte Configurate
-- **App.jsx**: Creato router con React Router
-- **Rotta `/`**: HomePage per lista film
-- **Rotta `/Movies/:id`**: MovieDetail per singolo film
+### 5. File Principali
+- **App.jsx**: Router e rotte
+- **HomePage.jsx**: Lista film 
+- **Movies.jsx**: Dettaglio singolo film
+- **card.jsx**: Componente card riutilizzabile
+- **Navbar.jsx**: Menu navigazione
+- **ButtonHover.jsx**: Bottone per navigazione
+- **Footer.jsx**: Footer con links
 
-### 📄 Pagine Create
-- **pages/HomePage.jsx**: Pagina principale con lista film
-- **pages/MovieDetail.jsx**: Pagina dettaglio singolo film
-
-### 🎯 Componenti
-- **card.jsx**: Componente singola card film
-- **Navbar.jsx**: Menu di navigazione
-- **Card inserita in HomePage**: Visualizzazione lista film
+### 6. Passaggi Implementati
+- ✅ Configurato router con rotte
+- ✅ Creato pages HomePage
+- ✅ Creato pages Movies (SingleCard)
+- ✅ Creato componente Card singola
+- ✅ Inserita Card in HomePage
+- ✅ Creato Footer e aggiunto alle pagine
 
 ---
-*Progetto Boolean Academy - Classe 146 - Umberto Carbone - 1 agosto 2025*
+*Progetto Boolean Academy - Classe 146 - Umberto Carbone - 3 agosto 2025*

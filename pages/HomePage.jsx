@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Navbar from "../src/layouts/Navbar";
 import Card from "../components/card";
-
+import Footer from "../components/Footer";  // ← IMPORTA QUI
 
 export default function HomePage() {
     const [movies, setMovies] = useState([]);
@@ -20,10 +20,11 @@ export default function HomePage() {
                 {movies.map(movie => (
                     <div key={movie.id}>
                         <Card movie={movie} />
-
+                        <hr className='hr-gradient-sky' />
                     </div>
                 ))}
             </div>
+            <Footer />  {/* ← AGGIUNGI QUI */}
         </>
     )
 }

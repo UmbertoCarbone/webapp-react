@@ -6,7 +6,7 @@ body {
 }
 
 .btn-grad {
-    background-image: linear-gradient(to right, #83a4d4 0%, #b6fbff  51%, #83a4d4  100%);
+    background-image: linear-gradient(to right, #83a4d4 0%, #b6fbff 51%, #83a4d4 100%);
     margin: 5px;
     padding: 8px 20px;
     text-align: center;
@@ -23,14 +23,14 @@ body {
 
 .btn-grad:hover {
     background-position: right center;
-    
+
     text-decoration: none;
 }
 
 .card {
     background-color: transparent !important;
     border: none !important;
-    
+
     box-shadow: none !important;
 
     border-radius: 0 !important;
@@ -38,17 +38,21 @@ body {
 
 .card img {
     border: none !important;
-    
+
     border-radius: 0 !important;
-    
+
     box-shadow: none !important;
-    
+
 }
 
 .card-img-top {
     border-radius: 0 !important;
-    
+
 }
 
-
-
+.hr-gradient-sky {
+    background-image: linear-gradient(to right, #83a4d4, #b6fbff, #83a4d4);
+    height: 1px;
+    border: none;
+    margin: 22px 0;
+}
