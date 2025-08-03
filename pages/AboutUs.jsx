@@ -95,8 +95,8 @@ export default function AboutUs() {
                             </p>
                             <div className="text-center mt-4">
                                 <p className="text-white-50 small">
-                                    Sviluppato con ❤️ da <strong className="text-white">Umberto Carbone</strong>
-                                    - Boolean Academy 2025
+                                    Sviluppato con ❤️ da <strong className="text-white">Umberto Carbone </strong>
+                                    - Boolean Academy 2025 Classe <strong>146</strong>
                                 </p>
                             </div>
                         </div>

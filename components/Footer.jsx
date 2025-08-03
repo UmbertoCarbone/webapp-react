@@ -17,6 +17,11 @@ export default function Footer() {
                                     🏠 Home
                                 </Link>
                             </li>
+                            <li className="mb-2">
+                                <Link to="/About" className="text-white-50 text-decoration-none">
+                                    👥 About Us
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 

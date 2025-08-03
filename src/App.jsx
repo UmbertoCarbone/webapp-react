@@ -2,7 +2,7 @@ import './index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from '../pages/HomePage'
-import Movies from "../pages/Movies"
+import Movies from "../pages/SingleMovie"
 import AboutUs from "../pages/AboutUs"
 
 export default function App() {
