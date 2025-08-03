@@ -25,6 +25,9 @@ npm run dev
 
 ### 5. File Principali
 - **App.jsx**: Router e rotte
+
+![alt text](<ray-so-export (2).png>)
+
 - **HomePage.jsx**: Lista film 
 - **Movies.jsx**: Dettaglio singolo film
 - **card.jsx**: Componente card riutilizzabile

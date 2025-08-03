@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEarthEurope } from '@fortawesome/free-solid-svg-icons';
+
 export default function Footer() {
     return (
         <footer className="bg-dark text-white mt-5">
@@ -16,16 +17,6 @@ export default function Footer() {
                                     🏠 Home
                                 </Link>
                             </li>
-                            <li className="mb-2">
-                                {/*   <Link to="/about" className="text-white-50 text-decoration-none">
-                                    ℹ️ About Us
-                                </Link> */}
-                            </li>
-                            {/* <li className="mb-2">
-                                <Link to="/contact" className="text-white-50 text-decoration-none">
-                                    📧 Contatti
-                                </Link>
-                            </li> */}
                         </ul>
                     </div>
 
@@ -44,65 +35,32 @@ export default function Footer() {
                             <FontAwesomeIcon
                                 icon={faEarthEurope}
                                 className="me-2"
-                                style={{
-                                    color: "#ffffff9f",
-                                    fontWeight: '100'  // ← Rende l'icona più thin
-                                }}
+                                style={{ color: "#74C0FC", fontWeight: '300' }}
                             />
                             Seguici
                         </h5>
                         <ul className="list-unstyled">
                             <li className="mb-2">
-                                <a href="#" className="text-white-50 text-decoration-none">
-                                    <FontAwesomeIcon
-                                        icon={faFacebook}
-                                        beatFade
-                                        style={{ color: "#0866FF" }}
-                                        className="me-2"
-                                    />
+                                <a href="https://facebook.com" className="text-white-50 text-decoration-none" target="_blank" rel="noopener noreferrer">
+                                    <FontAwesomeIcon icon={faFacebook} beatFade style={{ color: "#0866FF" }} className="me-2" />
                                     Facebook
                                 </a>
                             </li>
                             <li className="mb-2">
-                                <a href="#" className="text-white-50 text-decoration-none">
-                                    <FontAwesomeIcon
-                                        icon={faInstagram}
-                                        beatFade
-                                        style={{ color: "#E4405F" }}
-                                        className="me-2"
-                                    />
+                                <a href="https://instagram.com" className="text-white-50 text-decoration-none" target="_blank" rel="noopener noreferrer">
+                                    <FontAwesomeIcon icon={faInstagram} beatFade style={{ color: "#E4405F" }} className="me-2" />
                                     Instagram
                                 </a>
                             </li>
                             <li className="mb-2">
-                                <a
-                                    href="https://github.com/UmbertoCarbone"
-                                    className="text-white-50 text-decoration-none"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <FontAwesomeIcon
-                                        icon={faGithub}
-                                        beatFade
-                                        style={{ color: "#e5eeeeff" }}
-                                        className="me-2"
-                                    />
+                                <a href="https://github.com/UmbertoCarbone" className="text-white-50 text-decoration-none" target="_blank" rel="noopener noreferrer">
+                                    <FontAwesomeIcon icon={faGithub} beatFade style={{ color: "#e5eeee" }} className="me-2" />
                                     GitHub
                                 </a>
                             </li>
                             <li className="mb-2">
-                                <a
-                                    href="https://linkedin.com/in/umberto-carbone"
-                                    className="text-white-50 text-decoration-none"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <FontAwesomeIcon
-                                        icon={faLinkedin}
-                                        beatFade
-                                        style={{ color: "#0A66C2" }}
-                                        className="me-2"
-                                    />
+                                <a href="https://linkedin.com/in/umberto-carbone" className="text-white-50 text-decoration-none" target="_blank" rel="noopener noreferrer">
+                                    <FontAwesomeIcon icon={faLinkedin} beatFade style={{ color: "#0A66C2" }} className="me-2" />
                                     LinkedIn
                                 </a>
                             </li>

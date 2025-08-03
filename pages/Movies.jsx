@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import Navbar from "../src/layouts/Navbar";
 import Card from "../components/card";
-import Footer from "../components/Footer";  
+import Footer from "../components/Footer";
 
 export default function SingleMovies() {
     const { id } = useParams();
@@ -23,7 +23,7 @@ export default function SingleMovies() {
             <div className="col-12 col-md-8 col-lg-6 mx-auto">
                 {movie && <Card movie={movie} showButton={false} />}
             </div>
-            <Footer />  
+            <Footer />
         </>
     )
 }
