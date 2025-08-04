@@ -62,6 +62,39 @@ body {
 
 .hr-gradient-sky:hover {
     background-position: right center;
-    
+
     text-decoration: none;
+}
+
+/* Placeholder bianchi per tutti i form-control */
+.form-control::placeholder {
+    color: white !important;
+    opacity: 1;
+}
+
+/* Placeholder quando il campo è in focus - più opaco */
+.form-control:focus::placeholder {
+    color: white !important;
+    opacity: 0.5 !important;
+}
+
+/* Se vuoi colori diversi per input e textarea */
+.form-control[type="text"]::placeholder {
+    color: white !important;
+    opacity: 1;
+}
+
+.form-control[type="text"]:focus::placeholder {
+    color: white !important;
+    opacity: 0.5 !important;
+}
+
+textarea.form-control::placeholder {
+    color: white !important;
+    opacity: 1;
+}
+
+textarea.form-control:focus::placeholder {
+    color: white !important;
+    opacity: 0.5 !important;
 }

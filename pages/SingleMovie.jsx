@@ -8,6 +8,7 @@ export default function SingleMovies() {
     const { id } = useParams();
     const [movie, setMovie] = useState(null);
     const [newReview, setNewReview] = useState('');
+    const [username, setUsername] = useState("")
 
     useEffect(() => {
         fetch(`${import.meta.env.VITE_API_URL}/api/movies/${id}`)
@@ -23,32 +24,39 @@ export default function SingleMovies() {
             </h1>
             <div className="col-12 col-md-8 col-lg-6 mx-auto">
                 {movie && <Card movie={movie} showButton={false} />}
-                
-                {/* Recensioni esistenti */}
+
+
                 <div className="mt-5">
                     <h3 className="text-white mb-3">📝 Recensioni</h3>
+                    {/* Form Recensione */}
+                    <div className="mt-4">
+                        <h3 className="text-white  mb-3">Scrivi una recensione</h3>
+                        <form /* onSubmit={handleSubmit} */>
+                            <input
+                                type="text"
+                                className="form-control bg-dark text-white border-secondary mb-3"
+                                placeholder="Il tuo nome..."
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                            />
+                            <textarea
+                                className="form-control bg-dark text-white border-secondary mb-3"
+                                rows="4"
+                                placeholder="Condividi la tua opinione sul film..."
+                                value={newReview}
+                                onChange={(e) => setNewReview(e.target.value)}
+                            />
+                            <a type="submit" className="btn-grad">
+                                Aggiungi Recensione
+                            </a>
+                        </form>
+                    </div>
                     {movie?.reviews?.map((review, index) => (
-                        <div key={index} className="bg-dark p-3 rounded mb-3">
+                        <div key={index} className="bg-dark p-3 m-3 rounded mb-3">
+                            <p className="text-white-50 mb-0">{review.name}</p>
                             <p className="text-white-50 mb-0">{review.text}</p>
                         </div>
                     ))}
-                </div>
-
-                {/* Form Recensione */}
-                <div className="mt-4">
-                    <h3 className="text-white mb-3">Scrivi una recensione</h3>
-                    <form>
-                        <textarea
-                            className="form-control bg-dark text-white border-secondary mb-3"
-                            rows="4"
-                            placeholder="Condividi la tua opinione sul film..."
-                            value={newReview}
-                            onChange={(e) => setNewReview(e.target.value)}
-                        />
-                        <a type="submit" className="btn-grad">
-                            Aggiungi Recensione
-                        </a>
-                    </form>
                 </div>
             </div>
             <Footer />
