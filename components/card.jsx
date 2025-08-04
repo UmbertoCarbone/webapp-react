@@ -7,7 +7,7 @@ export default function Card({ movie, showButton = true }) {
                 <div className="row g-0">
                     <div className="col-4">
                         <img
-                            src={movie.image}
+                            src={import.meta.env.VITE_API_URL + movie.image}
                             className="img-fluid h-100"
                             alt={movie.title}
                             style={{ objectFit: 'cover' }}

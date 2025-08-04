@@ -5,6 +5,7 @@ body {
     background: linear-gradient(to top, #111111, #000000) !important;
 }
 
+/* gradient button */
 .btn-grad {
     background-image: linear-gradient(to right, #83a4d4 0%, #b6fbff 51%, #83a4d4 100%);
     margin: 5px;
@@ -27,6 +28,7 @@ body {
     text-decoration: none;
 }
 
+/* Card */
 .card {
     background-color: transparent !important;
     border: none !important;
@@ -50,9 +52,16 @@ body {
 
 }
 
+/* hr gradient */
 .hr-gradient-sky {
     background-image: linear-gradient(to right, #83a4d4, #b6fbff, #83a4d4);
-    height: 1px;
+    height: 2.5px;
     border: none;
     margin: 22px 0;
+}
+
+.hr-gradient-sky:hover {
+    background-position: right center;
+    
+    text-decoration: none;
 }

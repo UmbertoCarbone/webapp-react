@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
+/* component */
 import Navbar from "../src/layouts/Navbar";
 import Card from "../components/card";
-import Footer from "../components/Footer";  // ← IMPORTA QUI
+import Footer from "../components/Footer";  
+
+
 
 export default function HomePage() {
     const [movies, setMovies] = useState([]);

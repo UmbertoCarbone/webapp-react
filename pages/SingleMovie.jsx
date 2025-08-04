@@ -45,9 +45,9 @@ export default function SingleMovies() {
                             value={newReview}
                             onChange={(e) => setNewReview(e.target.value)}
                         />
-                        <button type="submit" className="btn-grad">
+                        <a type="submit" className="btn-grad">
                             Aggiungi Recensione
-                        </button>
+                        </a>
                     </form>
                 </div>
             </div>
