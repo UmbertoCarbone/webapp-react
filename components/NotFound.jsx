@@ -11,7 +11,7 @@ export default function NotFound() {
             <div className="container-fluid d-flex flex-column justify-content-center align-items-center text-white py-5" style={{ minHeight: '60vh' }}>
                 <div className="text-center mb-4">
                     <FuzzyText 
-                        baseIntensity={0.2} 
+                        baseIntensity={0.25} 
                         hoverIntensity={0.5} 
                         enableHover={true}
                         fontSize="clamp(4rem, 15vw, 12rem)"

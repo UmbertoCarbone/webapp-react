@@ -1,13 +1,14 @@
+// components/FuzzyText.jsx
 import React, { useEffect, useRef } from "react";
 
 const FuzzyText = ({
   children,
-  fontSize = "clamp(2rem, 10vw, 10rem)",
+  fontSize = "clamp(2rem, 20vw, 10rem)",
   fontWeight = 900,
   fontFamily = "inherit",
   color = "#fff",
   enableHover = true,
-  baseIntensity = 0.18,
+  baseIntensity = 0.5,
   hoverIntensity = 0.5,
 }) => {
   const canvasRef = useRef(null);
@@ -60,33 +61,39 @@ const FuzzyText = ({
       const actualRight = metrics.actualBoundingBoxRight ?? metrics.width;
       const actualAscent = metrics.actualBoundingBoxAscent ?? numericFontSize;
       const actualDescent =
-        metrics.actualBoundingBoxDescent ?? numericFontSize * 0.2;
+        metrics.actualBoundingBoxDescent ?? numericFontSize * 0.25; // Aumentato da 0.2
 
       const textBoundingWidth = Math.ceil(actualLeft + actualRight);
       const tightHeight = Math.ceil(actualAscent + actualDescent);
 
-      const extraWidthBuffer = 10;
+      // AUMENTATO IL BUFFER PER EVITARE TAGLI
+      const extraWidthBuffer = 50; // Era 10, ora 30
+      const extraHeightBuffer = 20; // NUOVO: buffer per l'altezza
       const offscreenWidth = textBoundingWidth + extraWidthBuffer;
+      const offscreenHeight = tightHeight + extraHeightBuffer; // NUOVO
 
       offscreen.width = offscreenWidth;
-      offscreen.height = tightHeight;
+      offscreen.height = offscreenHeight; // Usato il nuovo height
 
       const xOffset = extraWidthBuffer / 2;
+      const yOffset = extraHeightBuffer / 2; // NUOVO
       offCtx.font = `${fontWeight} ${fontSizeStr} ${computedFontFamily}`;
       offCtx.textBaseline = "alphabetic";
       offCtx.fillStyle = color;
-      offCtx.fillText(text, xOffset - actualLeft, actualAscent);
+      offCtx.fillText(text, xOffset - actualLeft, actualAscent + yOffset); // Aggiunto yOffset
 
-      const horizontalMargin = 50;
-      const verticalMargin = 0;
+      // AUMENTATI I MARGINI
+      const horizontalMargin = 80; // Era 50, ora 80
+      const verticalMargin = 20; // Era 0, ora 20
+      
       canvas.width = offscreenWidth + horizontalMargin * 2;
-      canvas.height = tightHeight + verticalMargin * 2;
+      canvas.height = offscreenHeight + verticalMargin * 2; // Usato offscreenHeight
       ctx.translate(horizontalMargin, verticalMargin);
 
       const interactiveLeft = horizontalMargin + xOffset;
       const interactiveTop = verticalMargin;
       const interactiveRight = interactiveLeft + textBoundingWidth;
-      const interactiveBottom = interactiveTop + tightHeight;
+      const interactiveBottom = interactiveTop + offscreenHeight; // Usato offscreenHeight
 
       let isHovering = false;
       const fuzzRange = 30;
@@ -97,10 +104,10 @@ const FuzzyText = ({
           -fuzzRange,
           -fuzzRange,
           offscreenWidth + 2 * fuzzRange,
-          tightHeight + 2 * fuzzRange
+          offscreenHeight + 2 * fuzzRange // Usato offscreenHeight
         );
         const intensity = isHovering ? hoverIntensity : baseIntensity;
-        for (let j = 0; j < tightHeight; j++) {
+        for (let j = 0; j < offscreenHeight; j++) { // Usato offscreenHeight
           const dx = Math.floor(intensity * (Math.random() - 0.5) * fuzzRange);
           ctx.drawImage(
             offscreen,
@@ -194,7 +201,7 @@ const FuzzyText = ({
     hoverIntensity,
   ]);
 
-  return <canvas ref={canvasRef} />;
+  return <canvas ref={canvasRef} style={{ maxWidth: '100%', height: 'auto' }} />;
 };
 
 export default FuzzyText;

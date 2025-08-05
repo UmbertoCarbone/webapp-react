@@ -18,7 +18,8 @@ src/
 
 ### MILESTONE 0 - Setup Base
 - ✅ Configurazione progetto React
-- ✅ Router con rotte dinamiche
+- ✅ Router con rotte dinamiche!
+[alt text](<readme/ray-so-export (2).png>)
 - ✅ Homepage con lista film
 - ✅ Pagina dettaglio film
 - ✅ Componenti riutilizzabili

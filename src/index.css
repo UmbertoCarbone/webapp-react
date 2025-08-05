@@ -7,7 +7,7 @@ body {
 
 /* gradient button */
 .btn-grad {
-    background-image: linear-gradient(to right, #83a4d4 0%, #b6fbff 51%, #83a4d4 100%);
+    background-image: linear-gradient(to right, #83a4d4 0%, #b6d8ff 51%, #83a4d4 100%);
     margin: 5px;
     padding: 8px 20px;
     text-align: center;
