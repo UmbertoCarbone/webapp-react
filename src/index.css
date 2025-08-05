@@ -1,6 +1,6 @@
 @import "bootstrap";
 
-
+html,
 body {
     background: linear-gradient(to top, #111111, #000000) !important;
 }
@@ -19,7 +19,7 @@ body {
     border-radius: 10px;
     display: inline-block;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 23px;
 }
 
 .btn-grad:hover {

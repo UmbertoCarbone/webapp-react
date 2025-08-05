@@ -15,16 +15,16 @@ export default function NotFound() {
                         hoverIntensity={0.5} 
                         enableHover={true}
                         fontSize="clamp(4rem, 15vw, 12rem)"
-                        color="#ff4757"
+                        color="#83a4d4"
                     >
-                        404
+                        Error 404
                     </FuzzyText>
                 </div>
                 
                 <div className="text-center">
                     <h2 className="mb-4 text-white">🎬 Film non trovato</h2>
                     <p className="lead mb-4 text-white-50">
-                        Oops! Il film che stai cercando non esiste nel nostro database.
+                        Oops! Il film che stai cercando non esiste sul nostro sito.
                     </p>
                     <Link to="/" className="btn-grad">
                         🏠 Torna alla Homepage
