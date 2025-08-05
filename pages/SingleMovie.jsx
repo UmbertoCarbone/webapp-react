@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { data, useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import Navbar from "../src/layouts/Navbar";
 import Card from "../components/card";
@@ -9,7 +9,7 @@ export default function SingleMovies() {
     const [movie, setMovie] = useState(null);
 
     const [formData, setFormData] = useState({
-        username: '',
+        name: '',
         vote: "",
         text: ''
     });
@@ -17,7 +17,38 @@ export default function SingleMovies() {
     function handleSubmit(e) {
         e.preventDefault();
         // Logica per inviare la recensione al server
-        console.log("consolelog riuscito!",formData);
+        console.log("consolelog riuscito!", formData);
+
+        fetch(`${import.meta.env.VITE_API_URL}/api/movies/${id}/reviews`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log("Recensione aggiunta:", data);
+
+                // Aggiorna il movie con prevState e spread operator
+                setMovie(prevMovie => ({
+                    ...prevMovie,
+                    reviews: [...(prevMovie.reviews || []), formData]
+                }));
+
+                // Reset del form
+                setFormData({
+                    name: '',
+                    vote: "",
+                    text: ''
+                });
+
+                alert("Recensione aggiunta con successo!");
+            })
+            .catch(error => {
+                console.error("Errore:", error);
+                alert("Errore nell'invio della recensione. Riprova.");
+            });
     }
 
     useEffect(() => {
@@ -45,9 +76,13 @@ export default function SingleMovies() {
                                 type="text"
                                 className="form-control bg-dark text-white border-secondary mb-3"
                                 placeholder="Il tuo nome..."
-                                value={formData.username}
-                                onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+                                value={formData.name}
+                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                required
+                                minLength="2"
+                                maxLength="50"
                             />
+
                             <input
                                 type="number"
                                 name="vote"
@@ -58,13 +93,18 @@ export default function SingleMovies() {
                                 max="5"
                                 value={formData.vote}
                                 onChange={(e) => setFormData({ ...formData, vote: e.target.value })}
+                                required
                             />
+
                             <textarea
                                 className="form-control bg-dark text-white border-secondary mb-3"
                                 rows="4"
                                 placeholder="Condividi la tua opinione sul film..."
                                 value={formData.text}
                                 onChange={(e) => setFormData({ ...formData, text: e.target.value })}
+                                required
+                                minLength="5"
+                                maxLength="255"
                             />
                             <button type="submit" className="btn-grad">
                                 Aggiungi Recensione

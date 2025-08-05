@@ -1,50 +1,76 @@
 # 🎬 WebApp React - Film Database
 
-## 📋 MILESTONE 0 - Setup Progetto
+## 🚀 Setup Iniziale
+- Creazione progetto Vite + React
+- Installazione dipendenze (React Router, Bootstrap)
+- Configurazione ambiente di sviluppo
 
-### 1. Creazione Progetto
-```bash
-npm create vite@latest webapp-react
-cd webapp-react
+## 📁 Struttura Progetto
+```
+src/
+├── layouts/ (Navbar)
+├── components/ (Card, Footer, ButtonHover)
+├── pages/ (HomePage, SingleMovie) 
+└── styles/ (CSS personalizzato)
 ```
 
-### 2. Installazione Dipendenze
-```bash
-npm install
-npm install react-router-dom
-npm install bootstrap
-```
+## 📋 Milestone Completate
 
-### 3. Avvio Progetto
-```bash
-npm run dev
-```
+### MILESTONE 0 - Setup Base
+- ✅ Configurazione progetto React
+- ✅ Router con rotte dinamiche
+- ✅ Homepage con lista film
+- ✅ Pagina dettaglio film
+- ✅ Componenti riutilizzabili
+- ✅ Design responsive dark theme
 
-### 4. Struttura Cartelle Create
+### MILESTONE 1 - Backend (API)
+- 🔄 API POST per salvare recensioni nel database
+- 🔄 Test endpoint con Postman
+- 🔄 Verifica inserimento recensioni in DB
 
+### MILESTONE 2 - Frontend (Form Recensioni)
+- ✅ Form per inserimento recensioni
+- ✅ Integrazione nella pagina dettaglio film
+- ✅ Invio dati al backend via POST
+- ✅ Visualizzazione nuove recensioni in tempo reale
+- ✅ Aggiornamento UI dopo invio
 
-### 5. File Principali
-- **App.jsx**: Router e rotte
+### BONUS - Validazione
+- ✅ Validazione completa form recensioni
+- ✅ Controlli campi obbligatori
+- ✅ Verifica lunghezza testo
+- ✅ Validazione range voto (1-5)
+- ✅ Feedback errori per utente
 
-![alt text](<ray-so-export (2).png>)
+## 🎯 Funzionalità Implementate
 
-- **HomePage.jsx**: Lista film 
-- **Movies.jsx**: Dettaglio singolo film
-- **card.jsx**: Componente card riutilizzabile
-- **Navbar.jsx**: Menu navigazione
-- **ButtonHover.jsx**: Bottone per navigazione
-- **Footer.jsx**: Footer con links
+### Core Features
+- Lista film con navigazione
+- Dettaglio singolo film
+- Form recensioni completo
+- Validazione lato client
+- Gestione stati React
 
-### 6. Passaggi Implementati
-- ✅ Configurato router con rotte
-- ✅ Creato pages HomePage
-- ✅ Creato pages Movies (SingleCard)
-- ✅ Creato componente Card singola
-- ✅ Inserita Card in HomePage
-- ✅ Creato Footer e aggiunto alle pagine
+### UI/UX
+- Tema dark personalizzato
+- Placeholder bianchi visibili
+- Bottoni con gradienti
+- Animazioni hover e focus
+- Layout responsive
+
+### Integrazione API
+- Fetch lista film
+- Fetch dettaglio film + recensioni
+- POST nuove recensioni
+- Error handling e loading states
+
+## 🛠️ Stack Tecnologico
+- **Frontend**: React + Vite
+- **Routing**: React Router DOM
+- **Styling**: Bootstrap + CSS Custom
+- **State Management**: React Hooks
+- **API**: Fetch + REST
 
 ---
-*Progetto Boolean Academy - Classe 146 - Umberto Carbone - 3 agosto 2025*
-
-
-
+*Progetto Boolean Academy - Classe 146 - Umberto Carbone - 1 agosto 2025*
