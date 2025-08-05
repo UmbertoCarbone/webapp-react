@@ -45,3 +45,6 @@ npm run dev
 
 ---
 *Progetto Boolean Academy - Classe 146 - Umberto Carbone - 3 agosto 2025*
+
+
+
