@@ -3,9 +3,14 @@ import { useEffect, useState } from 'react';
 import Navbar from "../src/layouts/Navbar";
 import Card from "../components/card";
 import Footer from "../components/Footer";
+import { useLoaderContext } from "../contexts/LoaderContext";
+import Loader from "../components/Loader";
 
 export default function SingleMovies() {
     const { id } = useParams();
+
+    const { isLoading, setIsLoading } = useLoaderContext()
+
     const [movie, setMovie] = useState(null);
     let navigate = useNavigate();
     const [formData, setFormData] = useState({
@@ -18,7 +23,7 @@ export default function SingleMovies() {
         e.preventDefault();
         // Logica per inviare la recensione al server
         console.log("consolelog riuscito!", formData);
-
+        setIsLoading(true)
         fetch(`${import.meta.env.VITE_API_URL}/api/movies/${id}/reviews`, {
             method: 'POST',
             headers: {
@@ -48,11 +53,14 @@ export default function SingleMovies() {
             .catch(error => {
                 console.error("Errore:", error);
                 alert("Errore nell'invio della recensione. Riprova.");
-            });
+            })
+            .finally(() => setIsLoading(false));
     }
 
     useEffect(() => {
+        setIsLoading(true)
         fetch(`${import.meta.env.VITE_API_URL}/api/movies/${id}`)
+
             .then(response => response.json())
             .then(data => {
                 if (data.error) {
@@ -60,14 +68,15 @@ export default function SingleMovies() {
                 } else {
                     setMovie(data)
                 }
-
-
-            });
+            })
+            .catch(err => console.log(err))
+            .finally(() => setIsLoading(false))
     }, [id]);
 
     return (
         <>
             <Navbar />
+            {isLoading && <Loader />}
             <h1 className='text-center text-white'>
                 🎬 {movie?.title || 'Caricamento...'}
             </h1>

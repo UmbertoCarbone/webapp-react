@@ -5,18 +5,21 @@ import HomePage from '../pages/HomePage'
 import Movies from "../pages/SingleMovie"
 import AboutUs from "../pages/AboutUs"
 import NotFound from "../components/NotFound"
+import Loader from "../components/Loader"
+import { LoaderProvider } from '../contexts/LoaderContext';
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        
-        <Route path="/" element={<HomePage />} />
-        <Route path="/Movies/:id" element={<Movies />} />
-        <Route path="/About" element={<AboutUs />} />
-        <Route path="*" element={<NotFound/>} />
-        
-      </Routes>
-    </BrowserRouter>
+    <LoaderProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/Movies/:id" element={<Movies />} />
+          <Route path="/About" element={<AboutUs />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </LoaderProvider>
+
   )
 }
